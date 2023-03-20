@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home page</title>
+    <style type="text/css">
+      .left { float:left; width:50%; }
+      .right { float:right; width:50%; }
+</style>
+  </head>
+  <body>
+    <div class="left">
+      <h1>Quant A.I</h1>
+      <h2>Enter Code : </h2>
+      <textarea id="userinput" name="userinput" cols="100" rows="50"> </textarea>
+      <br><br>
+      <button onclick="createFile(); location.href='https://4444-x3n064-velia-c3c948rifdr.ws-us90.gitpod.io/answer'">Request</button>
+      <script>
+        function createFile() {
+          var userinput = document.getElementById("userinput").value;
+          if (userinput === "") {
+            alert("Please enter a input");
+            return;
+          }
+          // Check if the word to remove exists in the string
+          var wordToRemove = '?'
+          if (userinput.includes(wordToRemove)) {
+            // Remove the word from the string
+            var newuserinput = userinput.replace(wordToRemove, "");
+          } 
+          var command = 'echo "'+newuserinput+'" > userinput.txt';
+          var result = runCommand(command);;
+        }
+        function runCommand(command) {
+          var result = "";
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", "/runcommand/" + command, false);
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              result = xhr.responseText;
+            }
+          };
+          xhr.send();
+          return result;
+        }
+      </script>
+    </div>
+    <div class="right">
+      <br><br>
+    </div>
+  </body>
+</html>
