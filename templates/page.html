@@ -3,8 +3,9 @@
   <head>
     <title>Home page</title>
     <style type="text/css">
-      .left { float:left; width:50%; }
-      .right { float:right; width:50%; }
+      .left { float:left; width: 45%; }
+      .center { width: 10%; }
+      .right { float:right; width:45%; }
 </style>
   </head>
   <body>
@@ -43,11 +44,21 @@
           return result;
         }
       </script>
+    <div class="center">
+      <select name="hobby">
+        <option value="Python">Python</option>
+        <option value="C">C</option>
+        <option value="C++">C++</option>
+        <option value="Java">Java</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Go">Go</option>
+        <option value="PHP">PHP</option>
+      </select>
+    </div>
     </div>
     <div class="right">
     <h1> Result : </h1>
       <textarea style="margin-top:50px;" id="userinput" name="userinput" cols="100" rows="50" disabled>{{ file_contents }}</textarea>
-        
     </div>
   </body>
 </html>
