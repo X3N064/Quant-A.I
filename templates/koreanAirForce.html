@@ -3,12 +3,12 @@
   <head>
     <title>Home page</title>
     <style type="text/css">
-      body { margin: 0 auto; padding: 0; }
+      body { margin: 0 auto; padding: 0; background-image: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA2MTFfMjIg%2FMDAxNjU0OTMwNDQ1NjU3.rbkWXofBd08N7xRFHxSPTne-dtjhw4Gfq0O5yvwRrTkg.S3B02eZhtzaEca5AA0unXncpK4IPmLNIFJzzAk4vOBQg.JPEG.inhyangin%2F%25BC%25F8%25C3%25B5_%25B1%25B9%25B0%25A1%25BA%25B8%25C8%25C6%25C3%25B3_6%25BF%25F9_%25C0%25FC%25C0%25EF%25BF%25B5%25BF%25F5.jpg); }
       #container { width: 100%; }
-      .left { float:left; width: 46%; background-image: url(http://www.breaknews.com/imgdata/breaknews_com/201601/2016010732011197.png); }
+      .left { float:left; width: 46%; }
       .center { float:left; width:7%; float:left;}
       .poscenter { margin-top: 300px; }
-      .right { float:right; width:46%; text-align:center; background-image: url(https://thumb.mt.co.kr/06/2020/09/2020091412287650033_1.jpg); }
+      .right { float:right; width:46%; text-align:center; }
 </style>
   </head>
   <body>
@@ -20,15 +20,6 @@
         <br><br>
     </div>
     <div class="center poscenter"> 
-      <select id="hobby" name="hobby" style="text-align:center;">
-        <option value="Python">Python</option>
-        <option value="C">C</option>
-        <option value="C++">C++</option>
-        <option value="Java">Java</option>
-        <option value="JavaScript">JavaScript</option>
-        <option value="Go">Go</option>
-        <option value="PHP">PHP</option>
-      </select>
 
       <button onclick="createFile(); location.href='https://4444-x3n064-velia-c3c948rifdr.ws-us92.gitpod.io/answer'">Request</button>
         <script>
@@ -45,8 +36,7 @@
               // Remove the word from the string
               userinput = userinput.replace(wordToRemove, "");
             } 
-            var hobby = document.getElementById("hobby").value;
-            var command = 'echo "'+'change this to ' + hobby +' code '+ userinput+'" > userinput.txt';
+            var command = 'echo "'+ userinput+'" > userinput.txt';
             var result = runCommand(command);;
           }
           function runCommand(command) {

@@ -38,6 +38,12 @@ def result():
 def test():
     file_contents = read_file('result.txt')
     return render_template('page.html', file_contents=file_contents)
+
+@app.route("/yongdeok")
+def yongdeok():
+    file_contents = read_file('result.txt')
+    return render_template('koreanAirForce.html', file_contents=file_contents)
+
 #for command
 @app.route("/runcommand/<command>")
 def run_command(command):
@@ -49,7 +55,7 @@ def run_command(command):
 
 #response from chatgpt
 def openai():
-    url = "https://sharegpt.churchless.tech/share/v1/chat"
+    url = "https://chatgpt-api.shn.hk/v1/"
     headers = {
         "Content-Type": "application/json"
     }
