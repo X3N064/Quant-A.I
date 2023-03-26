@@ -5,10 +5,10 @@
     <style type="text/css">
       body { margin: 0 auto; padding: 0; }
       #container { width: 100%; }
-      .left { float:left; width: 46%; background-image: url(); }
-      .center { float:left; width:7%; float:left;}
+      .left { float:left; width: 46%; background-image: url(https://img.freepik.com/free-vector/abstract-blue-geometric-shapes-background_1035-17545.jpg?w=1380&t=st=1679811971~exp=1679812571~hmac=b4e6a4b99c3ddebc1b9f0ed4f86bfa462bedbb1f1f39ba218110d7e6ec7e0f8f);}
+      .center { float:left; width:7%; float:left; }
       .poscenter { margin-top: 300px; }
-      .right { float:right; width:46%; text-align:center; background-image: url(); }
+      .right { float:right; width:46%; text-align:center; }
 </style>
   </head>
   <body>
@@ -18,55 +18,55 @@
         <h2>Enter Code : </h2>
         <textarea id="userinput" name="userinput" cols="100" rows="50"> </textarea>
         <br><br>
-    </div>
-    <div class="center poscenter"> 
-      <select id="hobby" name="hobby" style="text-align:center;">
-        <option value="Python">Python</option>
-        <option value="C">C</option>
-        <option value="C++">C++</option>
-        <option value="Java">Java</option>
-        <option value="JavaScript">JavaScript</option>
-        <option value="Go">Go</option>
-        <option value="PHP">PHP</option>
-      </select>
+      </div>
+      <div class="center poscenter"> 
+        <select id="hobby" name="hobby" style="text-align:center;">
+          <option value="Python">Python</option>
+          <option value="C">C</option>
+          <option value="C++">C++</option>
+          <option value="Java">Java</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Go">Go</option>
+          <option value="PHP">PHP</option>
+        </select>
 
-      <button onclick="createFile(); location.href='https://4444-x3n064-velia-c3c948rifdr.ws-us92.gitpod.io/answer'">Request</button>
-        <script>
-          function createFile() {
-            var userinput = document.getElementById("userinput").value;
-            if (userinput === "") {
-              alert("Please enter a input");
-              return;
-            }
-            // Check if the word to remove exists in the string
-
-            var wordToRemove = '?'
-            if (userinput.includes(wordToRemove)) {
-              // Remove the word from the string
-              userinput = userinput.replace(wordToRemove, "");
-            } 
-            var hobby = document.getElementById("hobby").value;
-            var command = 'echo "'+'change this to ' + hobby +' code '+ userinput+'" > userinput.txt';
-            var result = runCommand(command);;
-          }
-          function runCommand(command) {
-            var result = "";
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "/runcommand/" + command, false);
-            xhr.onreadystatechange = function() {
-              if (xhr.readyState === 4 && xhr.status === 200) {
-                result = xhr.responseText;
+        <button onclick="createFile(); location.href='https://4444-x3n064-velia-c3c948rifdr.ws-us92.gitpod.io/answer'">Request</button>
+          <script>
+            function createFile() {
+              var userinput = document.getElementById("userinput").value;
+              if (userinput === "") {
+                alert("Please enter a input");
+                return;
               }
-            };
-            xhr.send();
-            return result;
-          }
-        </script>
-    </div>
-    <div class="right">
-    <h1> Result : </h1>
-      <textarea style="margin-top:50px;" id="userinput" name="userinput" cols="100" rows="50" disabled>{{ file_contents }}</textarea>
-    </div>
+              // Check if the word to remove exists in the string
+
+              var wordToRemove = '?'
+              if (userinput.includes(wordToRemove)) {
+                // Remove the word from the string
+                userinput = userinput.replace(wordToRemove, "");
+              } 
+              var hobby = document.getElementById("hobby").value;
+              var command = 'echo "'+'change this to ' + hobby +' code '+ userinput+'" > userinput.txt';
+              var result = runCommand(command);;
+            }
+            function runCommand(command) {
+              var result = "";
+              var xhr = new XMLHttpRequest();
+              xhr.open("GET", "/runcommand/" + command, false);
+              xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                  result = xhr.responseText;
+                }
+              };
+              xhr.send();
+              return result;
+            }
+          </script>
+      </div>
+      <div class="right">
+      <h1> Result : </h1>
+        <textarea style="margin-top:50px;" id="userinput" name="userinput" cols="100" rows="50" disabled>{{ file_contents }}</textarea>
+      </div>
   </div>
   </body>
 </html>
