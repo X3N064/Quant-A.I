@@ -39,11 +39,6 @@ def test():
     file_contents = read_file('result.txt')
     return render_template('page.html', file_contents=file_contents)
 
-@app.route("/yongdeok")
-def yongdeok():
-    file_contents = read_file('result.txt')
-    return render_template('koreanAirForce.html', file_contents=file_contents)
-
 #for command
 @app.route("/runcommand/<command>")
 def run_command(command):
